@@ -9,7 +9,13 @@ persist_with: villa_de_patos_default_datagroup
 
 include: "/views/**/*.view"
 
+access_grant: view_deprecated {
+  user_attribute: view_deprecated
+  allowed_values: ["yes"]
+}
+
 explore: villa_de_patos_store {
+  required_access_grants: [view_deprecated]
   from: location_store
 
   join: retail {
